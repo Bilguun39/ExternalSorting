@@ -15,12 +15,15 @@ public class Main {
 		// TODO Auto-generated method stub
 		// createRandomFile("E:/fileToSort.txt");
 
-		externalSort("E:/fileToSort.txt");
+		//Loading file from command-line using file path and name, for instance, below is example
+		externalSort(args[0]);
 
 	}
 
 	private static void externalSort(String path) {
+		//initializing  maximum file size
 		int maxFile = 340000;
+		//initializing temporary file size
 		int tempFile = 10000;
 
 		int slices = (int) Math.ceil(maxFile / tempFile);
@@ -159,6 +162,7 @@ public class Main {
 		}
 	}
 
+// implementing quicksort
 	private static void quickSort(int[] arr, int left, int right) {
 		int index = quickSortPartition(arr, left, right);
 
